@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Your details
-FULL_NAME = "polimera pragna sresta"
+FULL_NAME = "Polimera Pragna Sresta"
 DOB = "05052005"
 EMAIL = "pragnasresta05@gmail.com"
 ROLL_NUMBER = "22BCE1688"
@@ -32,13 +32,17 @@ def bfhl():
                 concat_alpha.append(item)
             else:
                 special_chars.append(item)
+        # alternating caps reverse string
         concat_alpha_str = "".join(concat_alpha)[::-1]
         alt_caps_str = ""
         for i, ch in enumerate(concat_alpha_str):
             alt_caps_str += ch.upper() if i % 2 == 0 else ch.lower()
+        # format user_id in lowercase with underscores
+        user_id = f"{FULL_NAME.lower().replace(' ', '_')}_{DOB}"
+
         response = {
             "is_success": True,
-            "user_id": f"{FULL_NAME}_{DOB}",
+            "user_id": user_id,
             "email": EMAIL,
             "roll_number": ROLL_NUMBER,
             "odd_numbers": odd_numbers,
@@ -54,8 +58,5 @@ def bfhl():
 @app.route("/", methods=["GET"])
 def home():
     return {"message": "BFHL API is running. Use POST /bfhl to test."}, 200
-
 if __name__ == "__main__":
     app.run(debug=True)
-
-
