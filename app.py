@@ -39,7 +39,6 @@ def bfhl():
             alt_caps_str += ch.upper() if i % 2 == 0 else ch.lower()
         # format user_id in lowercase with underscores
         user_id = f"{FULL_NAME.lower().replace(' ', '_')}_{DOB}"
-
         response = {
             "is_success": True,
             "user_id": user_id,
@@ -60,3 +59,4 @@ def home():
     return {"message": "BFHL API is running. Use POST /bfhl to test."}, 200
 if __name__ == "__main__":
     app.run(debug=True)
+
