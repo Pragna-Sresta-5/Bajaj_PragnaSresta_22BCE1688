@@ -1,6 +1,6 @@
 # Bajaj_PragnaSresta_22BCE1688
 
-## 👩‍💻 Author
+## Author
 - **Name:** Polimera Pragna Sresta  
 - **Roll Number:** 22BCE1688  
 - **Email:** pragnasresta05@gmail.com  
@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Project Description
+## Project Description
 This project implements the **BFHL REST API** as per the VIT Full Stack Objective question paper.  
 The API accepts an array of strings (numbers, alphabets, special characters) and returns:
 
@@ -25,20 +25,20 @@ The API accepts an array of strings (numbers, alphabets, special characters) and
 
 ---
 
-## 🚀 Hosted URL
+## Hosted URL
 - Base URL: [https://bajaj-pragnasresta-22bce1688.onrender.com](https://bajaj-pragnasresta-22bce1688.onrender.com)  
 - API Endpoint: [https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl](https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl)  
 
 ---
 
-## 📂 API Routes
+## API Routes
 - `GET /` → Check if API is running  
 - `GET /bfhl` → Shows message: *"This endpoint only supports POST. Send a JSON body like: { "data": ["a","1","$"] }"*  
 - `POST /bfhl` → Main logic endpoint  
 
 ---
 
-## 📜 Example Request & Response
+## Example Request & Response
 
 ### Request (POST `/bfhl`)
 ```json
@@ -65,7 +65,7 @@ The API accepts an array of strings (numbers, alphabets, special characters) and
 
 ---
 
-## 🛠️ How to Test the API
+## How to Test the API
 
 ### 1️⃣ Using cURL
 ```bash
@@ -85,6 +85,7 @@ curl -X POST https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl \
 ```
 
 ### 3️⃣ Using PowerShell (Windows)
+Input 1
 ```powershell
 $body = '{"data":["2","a","y","4","&","-","*","5","92","b"]}'
 Invoke-RestMethod -Method Post -Uri https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl -ContentType 'application/json' -Body $body
@@ -103,6 +104,7 @@ special_characters : {&, -, *}
 sum                : 103
 user_id            : polimera_pragna_sresta_05052005
 ```
+Input 2
 ```powershell
 $body = '{"data":["10","21","32","43"]}'
 Invoke-RestMethod -Method Post -Uri https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl -ContentType 'application/json' -Body $body
@@ -120,6 +122,7 @@ special_characters : {}
 sum                : 106
 user_id            : polimera_pragna_sresta_05052005
 ```
+Input 3
 ```powershell
 $body = '{"data":["x","y","z"]}'
 Invoke-RestMethod -Method Post -Uri https://bajaj-pragnasresta-22bce1688.onrender.com/bfhl -ContentType 'application/json' -Body $body
@@ -139,7 +142,7 @@ user_id            : polimera_pragna_sresta_05052005
 ```
 ---
 
-## ⚡ Local Development (Optional)
+## Local Development (Optional)
 
 If you want to run locally:
 
@@ -158,7 +161,7 @@ App will run at [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 📄 `requirements.txt`
+## `requirements.txt`
 Copy this into a file named `requirements.txt`:
 
 ```
@@ -169,7 +172,7 @@ gunicorn
 
 ---
 
-## 📄 `Procfile`
+## `Procfile`
 Copy this into a file named `Procfile`:
 
 ```
@@ -177,8 +180,7 @@ web: gunicorn app:app
 ```
 
 ---
-
-👉 Now your repo will be **exam-ready**:  
+ Now your repo will be **exam-ready**:  
 - `app.py` (your code)  
 - `requirements.txt` (dependencies)  
 - `Procfile` (for deployment)  
