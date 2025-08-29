@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Your details
-FULL_NAME = "Polimera Pragna Sresta"
+FULL_NAME = "polimera pragna sresta"
 DOB = "05052005"
 EMAIL = "pragnasresta05@gmail.com"
 ROLL_NUMBER = "22BCE1688"
@@ -57,4 +57,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
