@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect, url_for
 
 app = Flask(__name__)
 
@@ -8,8 +8,13 @@ DOB = "05052005"
 EMAIL = "pragnasresta05@gmail.com"
 ROLL_NUMBER = "22BCE1688"
 
-@app.route("/bfhl", methods=["POST"])
+@app.route("/bfhl", methods=["GET", "POST"])
 def bfhl():
+    if request.method == "GET":
+        # Friendly message when someone tries to access /bfhl via browser
+        return {
+            "message": "This endpoint only supports POST. Send a JSON body like: { \"data\": [\"a\",\"1\",\"$\"] }"
+        }, 200
     try:
         data = request.get_json()
         input_array = data.get("data", [])
@@ -59,4 +64,3 @@ def home():
     return {"message": "BFHL API is running. Use POST /bfhl to test."}, 200
 if __name__ == "__main__":
     app.run(debug=True)
-
